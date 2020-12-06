@@ -33,7 +33,6 @@ namespace presentacionGUI
 
         private void FormGestionClientes_Load(object sender, EventArgs e)
         {
-           ActualizarDataGridClientes();
         }
 
         private void ActualizarDataGridClientes()
@@ -45,6 +44,7 @@ namespace presentacionGUI
 
         private void BotonGuardarRegistro_Click(object sender, EventArgs e)
         {
+
             ClienteRegistrado cliente = new ClienteRegistrado();
             cliente.Cedula = TextIdentificacion.Text;
             cliente.Nombre = TextNombre.Text;
@@ -53,11 +53,13 @@ namespace presentacionGUI
             cliente.Direccion = TextDireccion.Text;
             this.clienteRegistradoService.Guardar(cliente);
             ActualizarDataGridClientes();
-            TextIdentificacion.Text = " ";
-            TextNombre.Text = " ";
-            TextApellido.Text = " ";
-            TextTelefono.Text = " ";
-            TextDireccion.Text = " ";
+
+            TextIdentificacion.Text = String.Empty;
+            TextNombre.Text = String.Empty;
+            TextApellido.Text = String.Empty;
+            TextTelefono.Text = String.Empty;
+            TextDireccion.Text = String.Empty;
+
         }
 
         private void BotonEditar_Click(object sender, EventArgs e)
@@ -80,6 +82,27 @@ namespace presentacionGUI
         {
             this.clienteRegistradoService.Eliminar(DataGridClientes.SelectedRows[0].Cells[0].Value.ToString());
             ActualizarDataGridClientes();
+        }
+
+        private void BotonConsultar_Click(object sender, EventArgs e)
+        {
+            ActualizarDataGridClientes();
+        }
+
+        private void BotonActualizar_Click(object sender, EventArgs e)
+        {
+            if (this.clienteRegistradoService.ConsultaIndividual(TextIdentificacion.Text))
+            {
+                ClienteRegistrado cliente = new ClienteRegistrado();
+                cliente.Cedula = TextIdentificacion.Text;
+                cliente.Nombre = TextNombre.Text;
+                cliente.Apellido = TextApellido.Text;
+                cliente.Telefono = TextTelefono.Text;
+                cliente.Direccion = TextDireccion.Text;
+               this.clienteRegistradoService.Actualizar(cliente);
+                ActualizarDataGridClientes();
+
+            }
         }
     }
 }

@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BotonActualizar = new System.Windows.Forms.Button();
             this.TextDireccion = new System.Windows.Forms.TextBox();
             this.TextTelefono = new System.Windows.Forms.TextBox();
             this.TextIdentificacion = new System.Windows.Forms.TextBox();
@@ -52,6 +53,7 @@
             this.lblRecordatorio = new System.Windows.Forms.Label();
             this.BotonEliminar = new System.Windows.Forms.Button();
             this.BotonEditar = new System.Windows.Forms.Button();
+            this.BotonConsultar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridClientes)).BeginInit();
@@ -60,6 +62,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(196)))), ((int)(((byte)(237)))));
+            this.panel1.Controls.Add(this.BotonActualizar);
             this.panel1.Controls.Add(this.TextDireccion);
             this.panel1.Controls.Add(this.TextTelefono);
             this.panel1.Controls.Add(this.TextIdentificacion);
@@ -79,6 +82,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(629, 768);
             this.panel1.TabIndex = 8;
+            // 
+            // BotonActualizar
+            // 
+            this.BotonActualizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(124)))), ((int)(((byte)(217)))));
+            this.BotonActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BotonActualizar.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BotonActualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(124)))), ((int)(((byte)(217)))));
+            this.BotonActualizar.Image = global::presentacionGUI.Properties.Resources.flexible;
+            this.BotonActualizar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.BotonActualizar.Location = new System.Drawing.Point(109, 506);
+            this.BotonActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BotonActualizar.Name = "BotonActualizar";
+            this.BotonActualizar.Size = new System.Drawing.Size(237, 50);
+            this.BotonActualizar.TabIndex = 27;
+            this.BotonActualizar.Text = "Actualizar Registro";
+            this.BotonActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BotonActualizar.UseVisualStyleBackColor = true;
+            this.BotonActualizar.Click += new System.EventHandler(this.BotonActualizar_Click);
             // 
             // TextDireccion
             // 
@@ -330,12 +351,30 @@
             this.BotonEditar.UseVisualStyleBackColor = true;
             this.BotonEditar.Click += new System.EventHandler(this.BotonEditar_Click);
             // 
+            // BotonConsultar
+            // 
+            this.BotonConsultar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(187)))), ((int)(((byte)(229)))));
+            this.BotonConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BotonConsultar.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BotonConsultar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(187)))), ((int)(((byte)(229)))));
+            this.BotonConsultar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.BotonConsultar.Location = new System.Drawing.Point(13, 564);
+            this.BotonConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BotonConsultar.Name = "BotonConsultar";
+            this.BotonConsultar.Size = new System.Drawing.Size(173, 50);
+            this.BotonConsultar.TabIndex = 22;
+            this.BotonConsultar.Text = "Consultar Registros";
+            this.BotonConsultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BotonConsultar.UseVisualStyleBackColor = true;
+            this.BotonConsultar.Click += new System.EventHandler(this.BotonConsultar_Click);
+            // 
             // FormGestionClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(235)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1667, 768);
+            this.Controls.Add(this.BotonConsultar);
             this.Controls.Add(this.lblRecordatorio);
             this.Controls.Add(this.BotonEliminar);
             this.Controls.Add(this.BotonEditar);
@@ -345,7 +384,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormGestionClientes";
             this.Text = "FormClientes";
-            this.Load += new System.EventHandler(this.FormGestionClientes_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -377,5 +415,7 @@
         private System.Windows.Forms.Label lblRecordatorio;
         private System.Windows.Forms.Button BotonEliminar;
         private System.Windows.Forms.Button BotonEditar;
+        private System.Windows.Forms.Button BotonConsultar;
+        private System.Windows.Forms.Button BotonActualizar;
     }
 }

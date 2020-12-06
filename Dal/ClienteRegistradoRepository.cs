@@ -21,7 +21,9 @@ namespace Dal
         {
             using (var command = _conneccion.CreateCommand())
             {
-                command.CommandText = "INSERT INTO CLIENTES(CEDULA,NOMBRE,APELLIDO,DIRECCION,TELEFONO) VALUES(:CEDULA,:NOMBRE,:APELLIDO,:DIRECCION,:TELEFONO)";
+                command.CommandText = @"BEGIN
+                                        SERVS_DOMICILIARIOS.REGISTRAR_CLIENTE(:CEDULA,:NOMBRE,:APELLIDO,:DIRECCION,:TELEFONO);
+                                        END;";
                 command.Parameters.Add("CEDULA", OracleDbType.Varchar2).Value = cliente.Cedula;
                 command.Parameters.Add("NOMBRE", OracleDbType.Varchar2).Value = cliente.Nombre;
                 command.Parameters.Add("APELLIDO", OracleDbType.Varchar2).Value = cliente.Apellido;
@@ -48,16 +50,32 @@ namespace Dal
                 return resultado;
         }
 
-        public ClienteRegistrado ConsultaIndividual(ClienteRegistrado clienteParaBuscar)
+        public void ConsultaIndividual(String Cedula)
         {
-            OracleDataReader dataReader;
+            
             using (var command = _conneccion.CreateCommand())
             {
                 command.CommandText = "SELECT CEDULA,NOMBRE,APELLIDO,DIRECCION,TELEFONO FROM CLIENTES WHERE CEDULA=:CEDULA";
-                command.Parameters.Add("CEDULA",OracleDbType.Varchar2).Value=clienteParaBuscar.Cedula;
-                dataReader = command.ExecuteReader();
-                    ClienteRegistrado clienteEncontrado = MapearClienteRegistrado(dataReader);
-                    return clienteEncontrado;
+                command.Parameters.Add("CEDULA",OracleDbType.Varchar2).Value=(string)Cedula;
+                command.ExecuteReader();
+            }
+        }
+
+
+        public void Actualizar(ClienteRegistrado cliente)
+        {
+            
+            using (var command = _conneccion.CreateCommand())
+            {
+                command.CommandText = @"BEGIN
+                                        SERVS_DOMICILIARIOS.ACTUALIZAR_CLIENTE(:CEDULAt,:NOMBREt, :APELLIDOt,:DIRECCIONt,:TELEFONOt);
+                                        END;";
+                command.Parameters.Add("CEDULAt", OracleDbType.Varchar2).Value = cliente.Cedula;
+                command.Parameters.Add("NOMBREt", OracleDbType.Varchar2).Value = cliente.Nombre;
+                command.Parameters.Add("APELLIDOt", OracleDbType.Varchar2).Value = cliente.Apellido;
+                command.Parameters.Add("DIRECCIONt", OracleDbType.Varchar2).Value = cliente.Direccion;
+                command.Parameters.Add("TELEFONOt", OracleDbType.Varchar2).Value = cliente.Telefono;
+                command.ExecuteNonQuery();
             }
         }
 

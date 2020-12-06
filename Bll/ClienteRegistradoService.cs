@@ -73,20 +73,42 @@ namespace BLL
             }
         }
 
-        public ClienteRegistradoResponse ConsultaIndividual(ClienteRegistrado cliente)
+        public bool ConsultaIndividual(String Cedula)
         {
             try
             {
                 this.conexion.Open();
-                return new ClienteRegistradoResponse(this.clienteRegistradoRepository.ConsultaIndividual(cliente));
+                this.clienteRegistradoRepository.ConsultaIndividual(Cedula);
+                return true;
+                
             }
             catch (Exception)
             {
-                return new ClienteRegistradoResponse("No se ha encontrado el cliente buscado");
+                return false;
+
             }
             finally
             {
                 this.conexion.Close();
+            }
+        }
+
+        public bool Actualizar(ClienteRegistrado cliente)
+        {
+            try
+            {
+                this.conexion.Open();
+                    clienteRegistradoRepository.Actualizar(cliente);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                
+                this.conexion.Close(); 
             }
         }
 
@@ -97,7 +119,6 @@ namespace BLL
         public bool Error{get;}
         public String Mensaje { get; }
         public List<ClienteRegistrado> ClientesRegistrados { get; }
-        public ClienteRegistrado ClienteRegistrado { get; }
         public ClienteRegistradoResponse(string mensaje)
         {
             Error = true;
@@ -108,12 +129,6 @@ namespace BLL
         {
             Error = false;
             ClientesRegistrados = clientesRegistrados;
-        }
-
-        public ClienteRegistradoResponse(ClienteRegistrado clienteRegistrado)
-        {
-            Error = false;
-            this.ClienteRegistrado = clienteRegistrado;
         }
     }
 }
