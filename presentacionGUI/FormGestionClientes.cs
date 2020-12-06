@@ -46,11 +46,11 @@ namespace presentacionGUI
         {
 
             ClienteRegistrado cliente = new ClienteRegistrado();
-            cliente.Cedula = TextIdentificacion.Text;
-            cliente.Nombre = TextNombre.Text;
-            cliente.Apellido = TextApellido.Text;
-            cliente.Telefono = TextTelefono.Text;
-            cliente.Direccion = TextDireccion.Text;
+            cliente.Cedula = TextIdentificacion.Text.Trim();
+            cliente.Nombre = TextNombre.Text.Trim();
+            cliente.Apellido = TextApellido.Text.Trim();
+            cliente.Telefono = TextTelefono.Text.Trim();
+            cliente.Direccion = TextDireccion.Text.Trim();
             this.clienteRegistradoService.Guardar(cliente);
             ActualizarDataGridClientes();
 
@@ -94,11 +94,11 @@ namespace presentacionGUI
             if (this.clienteRegistradoService.ConsultaIndividual(TextIdentificacion.Text))
             {
                 ClienteRegistrado cliente = new ClienteRegistrado();
-                cliente.Cedula = TextIdentificacion.Text;
-                cliente.Nombre = TextNombre.Text;
-                cliente.Apellido = TextApellido.Text;
-                cliente.Telefono = TextTelefono.Text;
-                cliente.Direccion = TextDireccion.Text;
+                cliente.Cedula = TextIdentificacion.Text.Trim();
+                cliente.Nombre = TextNombre.Text.Trim();
+                cliente.Apellido = TextApellido.Text.Trim();
+                cliente.Telefono = TextTelefono.Text.Trim();
+                cliente.Direccion = TextDireccion.Text.Trim();
                this.clienteRegistradoService.Actualizar(cliente);
                 ActualizarDataGridClientes();
 
