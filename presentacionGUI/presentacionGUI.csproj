@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CDBA6B77-8D03-4CD4-8A8E-192D8589A2AF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>presentacionGUI</RootNamespace>
+    <AssemblyName>presentacionGUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="ConfigConnection.cs" />
+    <Compile Include="FormCalcularPlanilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCalcularPlanilla.Designer.cs">
+      <DependentUpon>FormCalcularPlanilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGestionClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestionClientes.Designer.cs">
+      <DependentUpon>FormGestionClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInicio.Designer.cs">
+      <DependentUpon>FormInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGestionDomiciliarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestionDomiciliarios.Designer.cs">
+      <DependentUpon>FormGestionDomiciliarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegistrarDomicilios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistrarDomicilios.Designer.cs">
+      <DependentUpon>FormRegistrarDomicilios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IDetalle.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCalcularPlanilla.resx">
+      <DependentUpon>FormCalcularPlanilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGestionClientes.resx">
+      <DependentUpon>FormGestionClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInicio.resx">
+      <DependentUpon>FormInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGestionDomiciliarios.resx">
+      <DependentUpon>FormGestionDomiciliarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistrarDomicilios.resx">
+      <DependentUpon>FormRegistrarDomicilios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\87e89749-9e99-4f85-9cf2-5da8c9f9c644_200x200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vespa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vespa %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\servicio-al-cliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consultante.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consumidor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a1252af9-6175-4ed5-9f83-6fdef74eb9f4_200x200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha-correcta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\datos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pagina-de-inicio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar-usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flexible.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pagina-principal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bll\Bll.csproj">
+      <Project>{5419870d-cf0d-451d-8186-d77755e576fd}</Project>
+      <Name>Bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{54700e4c-832d-44e3-acf0-dd7f8376f235}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
