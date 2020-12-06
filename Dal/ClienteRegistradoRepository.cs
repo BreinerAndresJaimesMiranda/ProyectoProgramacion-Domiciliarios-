@@ -52,12 +52,11 @@ namespace Dal
 
         public void ConsultaIndividual(String Cedula)
         {
-            
             using (var command = _conneccion.CreateCommand())
             {
-                command.CommandText = "SELECT CEDULA,NOMBRE,APELLIDO,DIRECCION,TELEFONO FROM CLIENTES WHERE CEDULA=:CEDULA";
-                command.Parameters.Add("CEDULA",OracleDbType.Varchar2).Value=(string)Cedula;
-                command.ExecuteReader();
+                command.CommandText = "SELECT CEDULA FROM CLIENTES WHERE CEDULA = :CEDULAT";
+                command.Parameters.Add("CEDULAT",OracleDbType.Varchar2).Value=(string)Cedula;
+                command.ExecuteNonQuery();
             }
         }
 

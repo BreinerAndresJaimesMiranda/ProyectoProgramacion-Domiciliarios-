@@ -80,7 +80,6 @@ namespace BLL
                 this.conexion.Open();
                 this.clienteRegistradoRepository.ConsultaIndividual(Cedula);
                 return true;
-                
             }
             catch (Exception)
             {

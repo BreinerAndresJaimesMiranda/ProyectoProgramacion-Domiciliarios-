@@ -31,14 +31,11 @@ namespace presentacionGUI
             lblRecordatorio.Visible = false;
         }
 
-        private void FormGestionClientes_Load(object sender, EventArgs e)
-        {
-        }
 
         private void ActualizarDataGridClientes()
         {
-                 List<ClienteRegistrado> clientesRegistrados = clienteRegistradoService.ConsultarTodos().ClientesRegistrados;
-                DataGridClientes.DataSource = clientesRegistrados;
+            List<ClienteRegistrado> clientesRegistrados = clienteRegistradoService.ConsultarTodos().ClientesRegistrados;    
+            DataGridClientes.DataSource = clientesRegistrados;
             
         }
 
@@ -91,7 +88,8 @@ namespace presentacionGUI
 
         private void BotonActualizar_Click(object sender, EventArgs e)
         {
-            if (this.clienteRegistradoService.ConsultaIndividual(TextIdentificacion.Text))
+            
+            if (this.clienteRegistradoService.ConsultaIndividual(TextIdentificacion.Text) == true && TextIdentificacion.Text.Trim() != String.Empty)
             {
                 ClienteRegistrado cliente = new ClienteRegistrado();
                 cliente.Cedula = TextIdentificacion.Text.Trim();
@@ -99,10 +97,15 @@ namespace presentacionGUI
                 cliente.Apellido = TextApellido.Text.Trim();
                 cliente.Telefono = TextTelefono.Text.Trim();
                 cliente.Direccion = TextDireccion.Text.Trim();
-               this.clienteRegistradoService.Actualizar(cliente);
+                this.clienteRegistradoService.Actualizar(cliente);
                 ActualizarDataGridClientes();
 
             }
+            else
+            {
+                MessageBox.Show("No se han podido atualizar los datos del cliente seleccionado favor revisar los datos ingresados");
+            }
+            
         }
     }
 }
