@@ -78,7 +78,7 @@ namespace presentacionGUI
             servicio.DestinoFinal = TextDestinoFinal.Text;
             servicio.Descripcion = TextDescripcion.Text;
             
-            if(TextIdDomiciliarioFiltro.Text != string.Empty)
+            if(TextIdDomiciliario.Text != string.Empty)
             {
                 MessageBox.Show(servicioService.Guardar(servicio));
             }
