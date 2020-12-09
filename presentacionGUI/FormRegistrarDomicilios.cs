@@ -82,6 +82,10 @@ namespace presentacionGUI
             {
                 MessageBox.Show(servicioService.Guardar(servicio));
             }
+            else
+            {
+                MessageBox.Show("Favor seleccionar a un domiciliario primero");
+            }
 
         }
 
