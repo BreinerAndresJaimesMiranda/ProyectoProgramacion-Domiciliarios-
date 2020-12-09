@@ -34,9 +34,18 @@ namespace presentacionGUI
 
         private void ActualizarDataGridClientes()
         {
-            List<ClienteRegistrado> clientesRegistrados = clienteRegistradoService.ConsultarTodos().ClientesRegistrados;    
-            DataGridClientes.DataSource = clientesRegistrados;
-            
+            ClienteRegistradoResponse clienteRegistradoResponse = clienteRegistradoService.ConsultarTodos();
+
+            if (clienteRegistradoResponse.Error == false)
+            {
+                DataGridClientes.DataSource = clienteRegistradoResponse.ClientesRegistrados;
+            }
+            else
+            {
+                MessageBox.Show(clienteRegistradoResponse.Mensaje);
+            }
+
+            //GuardarPdfDomiciliarios(clientesRegistrados);
         }
 
         private void BotonGuardarRegistro_Click(object sender, EventArgs e)
@@ -56,7 +65,6 @@ namespace presentacionGUI
             TextApellido.Text = String.Empty;
             TextTelefono.Text = String.Empty;
             TextDireccion.Text = String.Empty;
-
         }
 
         private void BotonEditar_Click(object sender, EventArgs e)
@@ -75,11 +83,7 @@ namespace presentacionGUI
             }
         }
 
-        private void BotonEliminar_Click(object sender, EventArgs e)
-        {
-            this.clienteRegistradoService.Eliminar(DataGridClientes.SelectedRows[0].Cells[0].Value.ToString());
-            ActualizarDataGridClientes();
-        }
+
 
         private void BotonConsultar_Click(object sender, EventArgs e)
         {
@@ -99,13 +103,34 @@ namespace presentacionGUI
                 cliente.Direccion = TextDireccion.Text.Trim();
                 this.clienteRegistradoService.Actualizar(cliente);
                 ActualizarDataGridClientes();
-
             }
             else
             {
                 MessageBox.Show("No se han podido atualizar los datos del cliente seleccionado favor revisar los datos ingresados");
             }
             
+
         }
+
+        private void GuardarPdfDomiciliarios(List<ClienteRegistrado> clientes)
+        {
+            PdfClienteRegistradoService pdfClienteRegistradoService = new PdfClienteRegistradoService();
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Guardar Clientes registrados";
+            saveFileDialog.InitialDirectory = "c:/document";
+            saveFileDialog.DefaultExt = "pdf";
+            string FileName="";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                FileName = saveFileDialog.FileName;
+                if (FileName != "" && clientes.Count > 0)
+                {
+                    string Mensaje = pdfClienteRegistradoService.Guardar(clientes,FileName);
+                    MessageBox.Show(Mensaje);
+                }
+            }
+
+        }
+
     }
 }

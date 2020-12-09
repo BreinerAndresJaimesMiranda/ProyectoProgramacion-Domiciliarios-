@@ -50,13 +50,15 @@ namespace Dal
                 return resultado;
         }
 
-        public void ConsultaIndividual(String Cedula)
+        public int ConsultaIndividual(String Cedula)
         {
             using (var command = _conneccion.CreateCommand())
             {
-                command.CommandText = "SELECT CEDULA FROM CLIENTES WHERE CEDULA = :CEDULAT";
+                command.CommandText = "SELECT COUNT(*) FROM CLIENTES WHERE CEDULA = :CEDULAT";
                 command.Parameters.Add("CEDULAT",OracleDbType.Varchar2).Value=(string)Cedula;
-                command.ExecuteNonQuery();
+                var dataReader = command.ExecuteReader();
+                dataReader.Read();
+                return dataReader.GetInt32(0);
             }
         }
 

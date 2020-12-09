@@ -64,6 +64,12 @@
     <Compile Include="FormGestionClientes.Designer.cs">
       <DependentUpon>FormGestionClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormHistorialVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHistorialVehiculos.Designer.cs">
+      <DependentUpon>FormHistorialVehiculos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormGestionClientes.resx">
       <DependentUpon>FormGestionClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHistorialVehiculos.resx">
+      <DependentUpon>FormHistorialVehiculos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.cs</DependentUpon>

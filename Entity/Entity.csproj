@@ -44,10 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteRegistrado.cs" />
+    <Compile Include="Planila.cs" />
     <Compile Include="Vehiculo.cs" />
     <Compile Include="Servicio.cs" />
     <Compile Include="Domiciliario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VehiculoHistorial.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

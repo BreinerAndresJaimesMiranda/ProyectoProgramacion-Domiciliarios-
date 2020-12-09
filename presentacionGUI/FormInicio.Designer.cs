@@ -109,7 +109,7 @@
             this.pnlPrincipal.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(1250, 663);
+            this.pnlPrincipal.Size = new System.Drawing.Size(1028, 609);
             this.pnlPrincipal.TabIndex = 3;
             // 
             // pnlMessageClientes
@@ -402,9 +402,9 @@
             this.pnlDomiciliariosDisponibles.Controls.Add(this.dataGridView6);
             this.pnlDomiciliariosDisponibles.Controls.Add(this.panel7);
             this.pnlDomiciliariosDisponibles.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlDomiciliariosDisponibles.Location = new System.Drawing.Point(984, 0);
+            this.pnlDomiciliariosDisponibles.Location = new System.Drawing.Point(762, 0);
             this.pnlDomiciliariosDisponibles.Name = "pnlDomiciliariosDisponibles";
-            this.pnlDomiciliariosDisponibles.Size = new System.Drawing.Size(266, 663);
+            this.pnlDomiciliariosDisponibles.Size = new System.Drawing.Size(266, 609);
             this.pnlDomiciliariosDisponibles.TabIndex = 8;
             // 
             // dataGridView6
@@ -450,7 +450,7 @@
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightBlue;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView6.RowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView6.Size = new System.Drawing.Size(266, 629);
+            this.dataGridView6.Size = new System.Drawing.Size(266, 575);
             this.dataGridView6.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn5
@@ -603,7 +603,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1250, 663);
+            this.ClientSize = new System.Drawing.Size(1028, 609);
             this.Controls.Add(this.pnlPrincipal);
             this.Name = "FormInicio";
             this.Text = "FormInicio";

@@ -9,23 +9,22 @@ namespace Entity
     public class Domiciliario
     {
         public string ID_Trabajador { get; set; }
-        public string PrimerNombre { get; set; }
-        public string PrimerApellido { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
         public string Estado { set; get; }
         public int Base {set;get;}
 
-        public Vehiculo vehiculo { set; get; }
+        public string FechaContrato { set; get; }
 
         public Domiciliario() { }
 
-        public Domiciliario(string iD_Trabajador, string primerNombre, string primerApellido, string estado, int @base, Vehiculo vehiculo)
+        public Domiciliario(string iD_Trabajador, string Nombre, string Apellido, string estado, int @base)
         {
             ID_Trabajador = iD_Trabajador;
-            PrimerNombre = primerNombre;
-            PrimerApellido = primerApellido;
+            this.Nombre = Nombre;
+            this.Apellido = Apellido;
             Estado = estado;
             Base = @base;
-            this.vehiculo = vehiculo;
         }
     }
 }

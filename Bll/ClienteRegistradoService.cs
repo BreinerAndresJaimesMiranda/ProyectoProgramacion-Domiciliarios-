@@ -78,8 +78,14 @@ namespace BLL
             try
             {
                 this.conexion.Open();
-                this.clienteRegistradoRepository.ConsultaIndividual(Cedula);
-                return true;
+                if (this.clienteRegistradoRepository.ConsultaIndividual(Cedula) == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception)
             {
@@ -89,6 +95,25 @@ namespace BLL
             finally
             {
                 this.conexion.Close();
+            }
+        }
+
+
+        public string ConsultaCedulas()
+        {
+            ClienteRegistradoResponse clienteRegistradoResponse = this.ConsultarTodos();
+            if (clienteRegistradoResponse.Error)
+            {
+                return clienteRegistradoResponse.Mensaje;
+            }
+            else
+            {
+                string resultado="";
+                foreach (var item in clienteRegistradoResponse.ClientesRegistrados)
+                {
+                    resultado = resultado + item.Cedula + ";";
+                }
+                return resultado;
             }
         }
 

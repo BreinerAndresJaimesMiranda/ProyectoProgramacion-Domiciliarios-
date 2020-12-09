@@ -29,9 +29,10 @@ namespace presentacionGUI
         }
         public void VolverInicio()
         {
-            FormInicio formInicio = new FormInicio();
-            AsignarDetalles(formInicio);
-            OpenChildForm(formInicio);
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
             lblTitulo.Text = "Inicio";
         }
 

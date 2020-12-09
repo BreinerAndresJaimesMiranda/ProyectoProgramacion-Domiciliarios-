@@ -51,7 +51,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.DataGridClientes = new System.Windows.Forms.DataGridView();
             this.lblRecordatorio = new System.Windows.Forms.Label();
-            this.BotonEliminar = new System.Windows.Forms.Button();
             this.BotonEditar = new System.Windows.Forms.Button();
             this.BotonConsultar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -315,24 +314,6 @@
     "o.";
             this.lblRecordatorio.Visible = false;
             // 
-            // BotonEliminar
-            // 
-            this.BotonEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(187)))), ((int)(((byte)(229)))));
-            this.BotonEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BotonEliminar.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BotonEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(187)))), ((int)(((byte)(229)))));
-            this.BotonEliminar.Image = global::presentacionGUI.Properties.Resources.eliminar_usuario;
-            this.BotonEliminar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.BotonEliminar.Location = new System.Drawing.Point(212, 506);
-            this.BotonEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BotonEliminar.Name = "BotonEliminar";
-            this.BotonEliminar.Size = new System.Drawing.Size(189, 50);
-            this.BotonEliminar.TabIndex = 20;
-            this.BotonEliminar.Text = "Eliminar Registro";
-            this.BotonEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BotonEliminar.UseVisualStyleBackColor = true;
-            this.BotonEliminar.Click += new System.EventHandler(this.BotonEliminar_Click);
-            // 
             // BotonEditar
             // 
             this.BotonEditar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(187)))), ((int)(((byte)(229)))));
@@ -358,7 +339,7 @@
             this.BotonConsultar.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BotonConsultar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(187)))), ((int)(((byte)(229)))));
             this.BotonConsultar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.BotonConsultar.Location = new System.Drawing.Point(13, 564);
+            this.BotonConsultar.Location = new System.Drawing.Point(195, 506);
             this.BotonConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BotonConsultar.Name = "BotonConsultar";
             this.BotonConsultar.Size = new System.Drawing.Size(173, 50);
@@ -376,7 +357,6 @@
             this.ClientSize = new System.Drawing.Size(1667, 768);
             this.Controls.Add(this.BotonConsultar);
             this.Controls.Add(this.lblRecordatorio);
-            this.Controls.Add(this.BotonEliminar);
             this.Controls.Add(this.BotonEditar);
             this.Controls.Add(this.DataGridClientes);
             this.Controls.Add(this.panel6);
@@ -413,7 +393,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView DataGridClientes;
         private System.Windows.Forms.Label lblRecordatorio;
-        private System.Windows.Forms.Button BotonEliminar;
         private System.Windows.Forms.Button BotonEditar;
         private System.Windows.Forms.Button BotonConsultar;
         private System.Windows.Forms.Button BotonActualizar;

@@ -42,7 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteRegistradoService.cs" />
+    <Compile Include="DomiciliarioService.cs" />
+    <Compile Include="PdfClienteRegistradoService.cs" />
+    <Compile Include="PlanillaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicioService.cs" />
+    <Compile Include="VehiculoService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dal\Dal.csproj">
