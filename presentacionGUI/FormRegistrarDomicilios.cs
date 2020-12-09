@@ -42,7 +42,11 @@ namespace presentacionGUI
 
             TextIdDomiciliario.Items.AddRange(IdTrabajadores.Split(';'));
             TextIdDomiciliario.Items.Remove("");
-            TextIdDomiciliario.SelectedItem = TextIdDomiciliario.Items[0];
+            
+            if (IdTrabajadores.Count() > 0)
+            {
+                TextIdDomiciliario.SelectedItem = TextIdDomiciliario.Items[0];
+            }
 
             TextIdDomiciliarioFiltro.Items.AddRange(IdTrabajadores.Split(';'));
             TextIdDomiciliarioFiltro.Items.Remove("");
@@ -74,8 +78,11 @@ namespace presentacionGUI
             servicio.DestinoFinal = TextDestinoFinal.Text;
             servicio.Descripcion = TextDescripcion.Text;
             
+            if(TextIdDomiciliarioFiltro.Text != string.Empty)
+            {
+                MessageBox.Show(servicioService.Guardar(servicio));
+            }
 
-            MessageBox.Show(servicioService.Guardar(servicio));
         }
 
         private void BotonFiltrar_Click(object sender, EventArgs e)
